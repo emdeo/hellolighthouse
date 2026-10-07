@@ -1480,7 +1480,16 @@ function makeMarkerImage(color, scale = 1) {
 // ════════════════════════════════════════
 async function loadLighthouseData(map) {
   try {
-    const data = [...LIGHTHOUSE_DATA, ...LIGHTHOUSE_CUSTOM_DATA];
+        let remote = [];
+    try {
+      const res = await fetch("https://lighthouse-weather-test.ehdgml5032.workers.dev/lighthouses");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      remote = await res.json();
+    } catch (e) {
+      console.warn("원격 등대 데이터 로드 실패, 기존 파일 사용:", e);
+    }
+    const base = remote.length > 0 ? remote : LIGHTHOUSE_DATA;
+    const data = [...base, ...LIGHTHOUSE_CUSTOM_DATA];
     console.log(`✅ 등대 ${data.length}개 로드 완료`);
 
     const clusterer = new kakao.maps.MarkerClusterer({
