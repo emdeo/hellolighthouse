@@ -2424,3 +2424,13 @@ html:has(body.detail-page) {
   transition: background .15s, color .15s;
 }
 .notice-link:hover { background: var(--ocean); color: var(--white); }
+.notice-sub {
+  display: block;
+  margin-top: .7rem;
+  padding: .6rem .8rem;
+  background: var(--gray1);
+  border-radius: 8px;
+  font-size: .78rem;
+  color: var(--gray4);
+  line-height: 1.6;
+}
