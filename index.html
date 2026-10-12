@@ -97,6 +97,27 @@ name="naver-site-verification" content="dfbb55e62986dc5dab9dadb1bd87322daa2180a9
       </div>
       </div>
     </div>
+   </div>
+</div>
+
+<!-- 공지사항 팝업 -->
+<div id="notice-overlay">
+  <div id="notice-card">
+    <button id="notice-close">✕</button>
+    <span class="notice-badge">📢 공지사항</span>
+       <div class="notice-title">서비스 이전 안내</div>
+    <div class="notice-text">
+      이 페이지의 "안녕, 등대"는 <strong>2026년 10월 31일까지만</strong> 제공됩니다.<br>
+      이후에는 아래 사이트에서 정식 서비스로 지속 이용하실 수 있습니다.
+    </div>
+    <a class="notice-link" href="https://https://www.lighthouse-museum.or.kr/sea/hellolighthouse/" target="_blank" rel="noopener">
+       안녕, 등대 정식 서비스 바로가기 →
+    </a>
+    <label class="notice-today-row">
+      <input type="checkbox" id="notice-today-checkbox">
+      오늘 하루 보지 않기
+    </label>
+    <button id="notice-confirm">확인</button>
   </div>
 </div>
 
@@ -2010,6 +2031,32 @@ document.getElementById("mobile-links-btn").addEventListener("click", () => {
 </script>
 
 <script>
+// ── 공지사항 팝업 ──
+(function() {
+  const KEY = 'lh-notice-hidden-date';
+  const today = new Date().toISOString().slice(0, 10);
+  const overlay = document.getElementById('notice-overlay');
+
+  function closeNotice() {
+    if (document.getElementById('notice-today-checkbox').checked) {
+      try { localStorage.setItem(KEY, today); } catch (e) {}
+    }
+    overlay.classList.remove('visible');
+    // 공지를 닫은 뒤, 아직 안 봤다면 튜토리얼 시작
+    if (window.startTutorialIfNeeded) window.startTutorialIfNeeded();
+  }
+
+  document.getElementById('notice-close').addEventListener('click', closeNotice);
+  document.getElementById('notice-confirm').addEventListener('click', closeNotice);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeNotice(); });
+
+  let hiddenToday = false;
+  try { hiddenToday = localStorage.getItem(KEY) === today; } catch (e) {}
+  if (!hiddenToday) overlay.classList.add('visible');
+})();
+</script>
+
+<script>
 const TUTORIAL_STEPS = [
   { target: null, img: 'tutorial-mascot-1.png',
     text: '안녕! 나는 아기문어야.<br>사이트 이용법을 소개할게.' },
@@ -2296,8 +2343,14 @@ window.addEventListener('resize', () => {
 });
 
 // 처음 방문(또는 "다시 보지 않기" 안 누른 사용자)이면 자동으로 사용법 띄우기
-if (!localStorage.getItem('lh-tutorial-dismissed')) {
-  openTutorial();
+// 단, 공지사항 팝업이 떠 있으면 공지를 닫은 뒤에 시작한다
+window.startTutorialIfNeeded = function() {
+  if (!localStorage.getItem('lh-tutorial-dismissed')) {
+    openTutorial();
+  }
+};
+if (!document.getElementById('notice-overlay').classList.contains('visible')) {
+  window.startTutorialIfNeeded();
 }
 </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "09f6da4e2c634c26b59fe1707086bf54"}'></script><!-- End Cloudflare Web Analytics -->

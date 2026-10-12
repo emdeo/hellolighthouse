@@ -2345,3 +2345,82 @@ html:has(body.detail-page) {
   padding-top: 0;
   margin-top: 1.3rem;
 }
+
+/* ── 공지사항 팝업 ── */
+#notice-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 9500;
+  background: rgba(15,25,50,.55);
+  backdrop-filter: blur(4px);
+  align-items: center; justify-content: center;
+}
+#notice-overlay.visible { display: flex; }
+#notice-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1.8rem 1.6rem 1.2rem;
+  width: 380px;
+  max-width: 90vw;
+  box-shadow: 0 12px 48px rgba(27,46,75,.25);
+  position: relative;
+  animation: popup-in .22s cubic-bezier(.34,1.56,.64,1) both;
+}
+#notice-close {
+  position: absolute; top: 1rem; right: 1rem;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--gray1); border: none;
+  font-size: .85rem; color: var(--gray4);
+  cursor: pointer;
+}
+#notice-close:hover { background: var(--gray2); }
+.notice-badge {
+  display: inline-block;
+  font-size: .72rem; font-weight: 700;
+  padding: .2rem .6rem; border-radius: 5px;
+  background: #fff7ed; color: #92400e;
+  margin-bottom: .7rem;
+}
+.notice-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem; font-weight: 900;
+  color: var(--navy);
+  line-height: 1.4;
+  margin-bottom: .7rem;
+}
+.notice-text {
+  font-size: .88rem; color: var(--gray4);
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+}
+.notice-text strong { color: var(--navy); }
+.notice-today-row {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .8rem; color: var(--gray4);
+  cursor: pointer; user-select: none;
+  margin-bottom: .8rem;
+}
+.notice-today-row input { width: 15px; height: 15px; cursor: pointer; }
+#notice-confirm {
+  width: 100%; padding: .7rem;
+  background: var(--navy); color: var(--white);
+  border: none; border-radius: 10px;
+  font-family: var(--font-sans);
+  font-size: .9rem; font-weight: 700;
+  cursor: pointer;
+}
+#notice-confirm:hover { background: var(--ocean); }
+
+.notice-link {
+  display: block;
+  text-align: center;
+  padding: .65rem .8rem;
+  margin-bottom: 1rem;
+  background: var(--sky);
+  color: var(--ocean);
+  border: 1px solid var(--gray2);
+  border-radius: 10px;
+  font-size: .86rem; font-weight: 700;
+  text-decoration: none;
+  transition: background .15s, color .15s;
+}
+.notice-link:hover { background: var(--ocean); color: var(--white); }
