@@ -752,7 +752,7 @@ const LIGHTHOUSE_DATA =
   },
   {
     "id": "1232.5",
-    "name": "안인���항 방파제 등대",
+    "name": "안인진항 방파제 등대",
     "nameEn": "Aninjin Hang",
     "type": "고정표지",
     "sea": "동해안",
@@ -2144,7 +2144,7 @@ const LIGHTHOUSE_DATA =
     "id": "1301.4",
     "name": "화진2리항 남방파제 등대",
     "nameEn": "Hwajin-2ri S Breakwater",
-    "type": "고정표���",
+    "type": "고정표지",
     "sea": "동해안",
     "light": "Fl G 4s 14m 8M",
     "lat": 36.2432778,
@@ -3022,7 +3022,7 @@ const LIGHTHOUSE_DATA =
   },
   {
     "id": "1351.14",
-    "name": "수렴항 방파제 등대",
+    "name": "수렴항 동방파제 등대",
     "nameEn": "Suryeom Hang",
     "type": "고정표지",
     "sea": "동해안",
@@ -3262,7 +3262,7 @@ const LIGHTHOUSE_DATA =
   },
   {
     "id": "1364",
-    "name": "울산항 동��파제 서단 등대",
+    "name": "울산항 동방파제 서단 등대",
     "nameEn": "Ulsan Hang",
     "type": "고정표지",
     "sea": "동해안",
@@ -4712,7 +4712,7 @@ const LIGHTHOUSE_DATA =
   },
   {
     "id": "2072.26",
-    "name": "곶도 방파제 등대",
+    "name": "곶도 방��제 등대",
     "nameEn": "Gotdo",
     "type": "고정표지",
     "sea": "남해안",
@@ -4799,6 +4799,16 @@ const LIGHTHOUSE_DATA =
     "light": "Fl Y 4s 9.5m 7M",
     "lat": 34.9712222,
     "lng": 128.7246389
+  },
+  {
+    "id": "2076.9",
+    "name": "관포항 방파제 등대",
+    "nameEn": "Gwanpo Hang",
+    "type": "고정표지",
+    "sea": "남해안",
+    "light": "Fl G 4s 12m 7M",
+    "lat": 34.9926667,
+    "lng": 128.6973333
   },
   {
     "id": "2077.3",
@@ -5356,7 +5366,7 @@ const LIGHTHOUSE_DATA =
     "nameEn": "Hongdo",
     "type": "고정표지",
     "sea": "남해안",
-    "light": "Fl W 10s 117m 11M",
+    "light": "Fl W 10s 117m 21M",
     "lat": 34.5368333,
     "lng": 128.733
   },
@@ -7662,7 +7672,7 @@ const LIGHTHOUSE_DATA =
   },
   {
     "id": "2526.1",
-    "name": "풍남�� 도제 남 등대",
+    "name": "풍남항 도제 남 등대",
     "nameEn": "Pungnam Hang Training Dike S",
     "type": "고정표지",
     "sea": "남해안",
@@ -8082,7 +8092,7 @@ const LIGHTHOUSE_DATA =
   },
   {
     "id": "2557",
-    "name": "사동항 남방파제 등대",
+    "name": "사동항 ���방파제 등대",
     "nameEn": "Sadong Hang",
     "type": "고정표지",
     "sea": "남해안",
@@ -8805,7 +8815,7 @@ const LIGHTHOUSE_DATA =
     "name": "우도 등대",
     "nameEn": "Udo",
     "type": "고정표지",
-    "sea": "��해안",
+    "sea": "남해안",
     "light": "Fl W 20s 140m 27M",
     "lat": 33.4926944,
     "lng": 126.9658611
@@ -10044,7 +10054,7 @@ const LIGHTHOUSE_DATA =
     "id": "2700",
     "name": "세화항 동방파제 등대",
     "nameEn": "Sehwa Hang",
-    "type": "���정표지",
+    "type": "고정표지",
     "sea": "남해안",
     "light": "Fl G 4s 17m 9M",
     "lat": 33.5299167,
@@ -10666,9 +10676,9 @@ const LIGHTHOUSE_DATA =
     "nameEn": "Jokdo",
     "type": "고정표지",
     "sea": "서해안",
-    "light": "Al RW 4s 7.4m 7M",
+    "light": "Q(6)+LFl W 15s 11m 11M",
     "lat": 34.5909167,
-    "lng": 126.188
+    "lng": 126.1879444
   },
   {
     "id": "3048",
@@ -10825,7 +10835,7 @@ const LIGHTHOUSE_DATA =
     "name": "외면도 등대",
     "nameEn": "Oemyeondo",
     "type": "고정표지",
-    "sea": "서���안",
+    "sea": "서해안",
     "light": "Fl(2) W 6s 17m 9M",
     "lat": 34.7326111,
     "lng": 126.048
@@ -12314,7 +12324,7 @@ const LIGHTHOUSE_DATA =
     "id": "3233",
     "name": "가진서 등대",
     "nameEn": "Gajinseo",
-    "type": "고정표지",
+    "type": "���정표지",
     "sea": "서해안",
     "light": "Fl W 4s 29m 10M",
     "lat": 36.1058889,
@@ -14296,7 +14306,7 @@ const LIGHTHOUSE_DATA =
     "nameEn": "Incheon Hang",
     "type": "고정표지",
     "sea": "서해안",
-    "light": "Fl R 5s 18m 15M",
+    "light": "Fl R 5s 18m 11M",
     "lat": 37.46525,
     "lng": 126.5938056
   },
