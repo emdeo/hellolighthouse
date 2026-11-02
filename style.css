@@ -2414,7 +2414,7 @@ html:has(body.detail-page) {
   display: block;
   text-align: center;
   padding: .65rem .8rem;
-  margin-bottom: 1rem;
+  margin-bottom: .2rem;
   background: var(--sky);
   color: var(--ocean);
   border: 1px solid var(--gray2);
