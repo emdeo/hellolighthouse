@@ -2028,32 +2028,6 @@ document.getElementById("mobile-links-btn").addEventListener("click", () => {
 </script>
 
 <script>
-// ── 공지사항 팝업 ──
-(function() {
-  const KEY = 'lh-notice-hidden-date';
-  const today = new Date().toISOString().slice(0, 10);
-  const overlay = document.getElementById('notice-overlay');
-
-  function closeNotice() {
-    if (document.getElementById('notice-today-checkbox').checked) {
-      try { localStorage.setItem(KEY, today); } catch (e) {}
-    }
-    overlay.classList.remove('visible');
-    // 공지를 닫은 뒤, 아직 안 봤다면 튜토리얼 시작
-    if (window.startTutorialIfNeeded) window.startTutorialIfNeeded();
-  }
-
-  document.getElementById('notice-close').addEventListener('click', closeNotice);
-  document.getElementById('notice-confirm').addEventListener('click', closeNotice);
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeNotice(); });
-
-  let hiddenToday = false;
-  try { hiddenToday = localStorage.getItem(KEY) === today; } catch (e) {}
-  if (!hiddenToday) overlay.classList.add('visible');
-})();
-</script>
-
-<script>
 const TUTORIAL_STEPS = [
   { target: null, img: 'tutorial-mascot-1.png',
     text: '안녕! 나는 아기문어야.<br>사이트 이용법을 소개할게.' },
